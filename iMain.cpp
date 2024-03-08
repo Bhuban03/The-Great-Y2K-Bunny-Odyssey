@@ -5,12 +5,14 @@
 
 char BackGround[1][20] = {"Land.bmp"};
 char Button[4][20] = {"b1.bmp", "rule.bmp", "HighScore.bmp", "characters.bmp"};
-char Level[8][20] = {"levels\\LBG.bmp", "levels\\1.bmp", "levels\\2.bmp", "levels\\3.bmp", "levels\\4.bmp", "levels\\5.bmp", "levels\\6.bmp", "levels\\heading.bmp"};
-char particles[3][20] = {"levels\\ani1.bmp", "levels\\ani2.bmp", "levels\\ani3.bmp"};
+char Level[8][20] = {"LBG.bmp", "1.bmp", "2.bmp", "3.bmp", "4.bmp", "5.bmp", "6.bmp", "heading.bmp"};
+char particles[3][20] = {"ani1.bmp", "ani2.bmp", "ani3.bmp"};
 // char MojoBackGround[23][20] = {"BG\\image1x1.bmp", "BG\\image2x1.bmp", "BG\\image3x1.bmp", "BG\\image4x1.bmp", "BG\\image5x1.bmp", "BG\\image6x1.bmp", "BG\\image7x1.bmp", "BG\\image8x1.bmp", "BG\\image9x1.bmp", "BG\\image10x1.bmp", "BG\\image11x1.bmp", "BG\\image12x1.bmp", "BG\\image13x1.bmp", "BG\\image14x1.bmp", "BG\\image15x1.bmp", "BG\\image16x1.bmp", "BG\\image17x1.bmp", "BG\\image18x1.bmp", "BG\\image19x1.bmp", "BG\\image20x1.bmp", "BG\\image21x1.bmp", "BG\\image22x1.bmp", "BG\\MojoStage.bmp"};
 // int BackGround_x[22];
-char Level1BackGround[22][30] = {"image_part_001.bmp", "image_part_002.bmp", "image_part_003.bmp", "image_part_004.bmp", "image_part_005.bmp",
-								 "image_part_006.bmp", "image_part_007.bmp", "image_part_008.bmp", "image_part_009.bmp", "image_part_010.bmp", "image_part_011.bmp", "image_part_012.bmp",
+
+
+char Level1BackGround[22][30] = {"image_part_001.bmp", "image_part_002.bmp", "image_part_003.bmp", "image_part_004.bmp", "image_part_005.bmp", "image_part_006.bmp",
+								 "image_part_007.bmp", "image_part_008.bmp", "image_part_009.bmp", "image_part_010.bmp", "image_part_011.bmp", "image_part_012.bmp",
 								 "image_part_013.bmp", "image_part_014.bmp", "image_part_015.bmp", "image_part_016.bmp", "image_part_017.bmp", "image_part_018.bmp",
 								 "image_part_019.bmp", "image_part_020.bmp", "image_part_021.bmp", "image_part_022.bmp"};
 
@@ -32,16 +34,14 @@ char Level4BackGround[22][30] = {"01.bmp", "02.bmp", "03.bmp", "04.bmp", "05.bmp
 								 "13.bmp", "14.bmp", "15.bmp", "16.bmp", "17.bmp", "18.bmp",
 								 "19.bmp", "level3_20.bmp", "21.bmp", "22.bmp"};
 
-
-
-char HunBun[3][20] = {"jeans\\hunbun1.bmp", "jeans\\hunbun2.bmp", "jeans\\hunbun4.bmp"};
-char Dani[3][20] = {"dani\\dani.bmp", "dani\\dani2.bmp", "dani\\dani3.bmp"};
-char MinG[3][20] = {"ming\\ming1.bmp", "ming\\ming2.bmp", "ming\\ming3.bmp"};
-char Koyang[3][20] = {"koyang\\koyang1.bmp", "koyang\\koyang2.bmp", "koyang\\koyang3.bmp"};
-char Hein[3][20] = {"hein\\hein1.bmp", "hein\\hein2.bmp", "hein\\hein3.bmp"};
+char HunBun[3][20] = {"hunbun1.bmp", "hunbun2.bmp", "hunbun4.bmp"};
+char Dani[3][20] = {"dani.bmp", "dani2.bmp", "dani3.bmp"};
+char MinG[3][20] = {"ming1.bmp", "ming2.bmp", "ming3.bmp"};
+char Koyang[3][20] = {"koyang1.bmp", "koyang2.bmp", "koyang3.bmp"};
+char Hein[3][20] = {"hein1.bmp", "hein2.bmp", "hein3.bmp"};
 
 char Bunnies[8][20] = {"bun_1.bmp", "bun_2.bmp", "bun_3.bmp", "bun_4.bmp", "bun_5.bmp", "bun_6.bmp", "bun_7.bmp", "bun_8.bmp"};
-char BackButtons[2][20] = {"back\\backbutton.bmp", "back\\quitbutton.bmp"};
+char BackButtons[2][20] = {"backbutton.bmp", "quitbutton.bmp"};
 char mojo[2][20] = {"mojo1.bmp", "mojo2.bmp"};
 char COINS[7][20] = {"coins1.bmp", "coins2.bmp", "coins3.bmp", "coins4.bmp", "coins5.bmp", "coins6.bmp", "coins7.bmp"};
 char Hearts[10][20] = {"heart4.bmp", "heart6.bmp", "heart8.bmp", "heart9.bmp"};
@@ -349,7 +349,7 @@ void iDraw()
 		DrawScorePage();
 	}
 
-	else if(RulesPage)
+	else if (RulesPage)
 	{
 		DrawRulesPage();
 	}
@@ -411,12 +411,12 @@ void iMouse(int button, int state, int mx, int my)
 		// place your codes here
 		if ((mx >= 92 && mx <= 298) && (my >= 316 && my <= 468) && LandPage == 1)
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			if (mingChoose || hunbunChoose || koyangChoose || daniChoose || heinChoose)
 			{
@@ -431,12 +431,12 @@ void iMouse(int button, int state, int mx, int my)
 		}
 		else if ((mx >= 1107 && mx <= 1262) && (my >= 141 && my <= 270) && LandPage == 1)
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			GoToCharPage();
 			Reset_Level();
@@ -444,12 +444,12 @@ void iMouse(int button, int state, int mx, int my)
 
 		else if ((mx >= 508 && mx <= 647) && (my >= 357 && my <= 490) && LevelPage == 1)
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			GoToLevel1();
 			Reset_Level();
@@ -457,12 +457,12 @@ void iMouse(int button, int state, int mx, int my)
 
 		else if ((mx >= 697 && mx <= 837) && (my >= 355 && my <= 487) && LevelPage == 1)
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			GoToLevel2();
 			Reset_Level();
@@ -470,12 +470,12 @@ void iMouse(int button, int state, int mx, int my)
 
 		else if ((mx >= 508 && mx <= 647) && (my >= 185 && my <= 309) && LevelPage == 1)
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			GoToLevel3();
 			Reset_Level();
@@ -483,12 +483,12 @@ void iMouse(int button, int state, int mx, int my)
 
 		else if ((mx >= 697 && mx <= 837) && (my >= 185 && my <= 309) && LevelPage == 1)
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			GoToLevel4();
 			Reset_Level();
@@ -497,7 +497,7 @@ void iMouse(int button, int state, int mx, int my)
 		/*////////////////////////////////******************************** I'm Here!!!!!!!!!!...................
 				else if ((mx >= 52 && mx <= 140) && (my >= 693 && my <= 726) && LevelPage == 1)
 				{
-					PlaySound("music\\click.wav", NULL, SND_ASYNC);
+					PlaySound("click.wav", NULL, SND_ASYNC);
 					Sleep(300);
 					GoToLandPage();
 				}
@@ -505,12 +505,12 @@ void iMouse(int button, int state, int mx, int my)
 		else if ((mx >= 52 && mx <= 125) && (my >= 693 && my <= 726) && (Level1 == 1 || Level2 == 1 || Level3 == 1 || Level4 == 1 || LevelPage == 1))
 		{
 
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			if (Level1 == 1 || Level2 == 1 || Level3 == 1 || Level4 == 1)
 			{
@@ -524,12 +524,12 @@ void iMouse(int button, int state, int mx, int my)
 		}
 		else if (mx >= 50 && mx <= 140 && my >= 50 && my <= 146 && Charpage == 1)
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			GoToLandPage();
 			Reset_Level();
@@ -540,22 +540,22 @@ void iMouse(int button, int state, int mx, int my)
 			if (musicOn)
 			{
 				musicOn = false;
-			PlaySound(0,0,0);
+				PlaySound(0, 0, 0);
 			}
 			else
 			{
 				musicOn = true;
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 		}
 
 		else if (mx >= 315 && mx <= 537 && my >= 100 && my <= 544 && Charpage == 1)
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			hunbunChoose = 1;
 			mingChoose = 0;
@@ -566,11 +566,11 @@ void iMouse(int button, int state, int mx, int my)
 		}
 		else if (mx >= 50 && mx <= 271 && my >= 215 && my <= 655 && Charpage == 1)
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			hunbunChoose = 0;
 			mingChoose = 1;
@@ -581,11 +581,11 @@ void iMouse(int button, int state, int mx, int my)
 		}
 		else if (mx >= 580 && mx <= 800 && my >= 206 && my <= 648 && Charpage == 1)
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			hunbunChoose = 0;
 			mingChoose = 0;
@@ -596,11 +596,11 @@ void iMouse(int button, int state, int mx, int my)
 		}
 		else if (mx >= 1111 && mx <= 1330 && my >= 209 && my <= 657 && Charpage == 1)
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			hunbunChoose = 0;
 			mingChoose = 0;
@@ -612,11 +612,11 @@ void iMouse(int button, int state, int mx, int my)
 
 		else if (mx >= 848 && mx <= 1068 && my >= 102 && my <= 544 && Charpage == 1)
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			hunbunChoose = 0;
 			mingChoose = 0;
@@ -627,11 +627,11 @@ void iMouse(int button, int state, int mx, int my)
 		}
 		else if (mx >= 64 && mx <= 222 && my >= 660 && my <= 742 && Charpage == 1)
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			GoToLandPage();
 			Reset_Level();
@@ -645,11 +645,11 @@ void iMouse(int button, int state, int mx, int my)
 
 		else if ((mx >= 101 && mx <= 298) && (my >= 373 && my <= 444) && gameOver == 1)
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			GoToLevelPage();
 			Reset_Level();
@@ -657,11 +657,11 @@ void iMouse(int button, int state, int mx, int my)
 
 		else if (LandPage && (mx >= 1110 && mx <= 1256) && (my >= 366 && my <= 486))
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			GoToHighSocrePage();
 		}
@@ -675,11 +675,11 @@ void iMouse(int button, int state, int mx, int my)
 		}
 		else if (gameOver && (mx >= 1013 && mx <= 1085) && (my >= 138 && my <= 200))
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			mode = 0;
 			GoToLandPage();
@@ -687,36 +687,36 @@ void iMouse(int button, int state, int mx, int my)
 		}
 		else if (gameWin && (mx >= 1106 && mx <= 1167) && (my >= 200 && my <= 245))
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			mode = 0;
 			GoToLandPage();
 			Reset_Level();
 		}
 
-		else if ( (highScorePage|| RulesPage) && (mx >= 60 && mx <= 168) && (my >= 600 && my <= 631))
+		else if ((highScorePage || RulesPage) && (mx >= 60 && mx <= 168) && (my >= 600 && my <= 631))
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			GoToLandPage();
 			Reset_Level();
 		}
 
-		else if(LandPage &&  (mx >= 1124 && mx <= 1254) && (my >= 579 && my <= 683))
+		else if (LandPage && (mx >= 1124 && mx <= 1254) && (my >= 579 && my <= 683))
 		{
-			PlaySound("music\\click.wav", NULL, SND_ASYNC);
+			PlaySound("click.wav", NULL, SND_ASYNC);
 			Sleep(350);
 			if (musicOn)
 			{
-				PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+				PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 			}
 			GoToRulesPage();
 			Reset_Level();
@@ -754,7 +754,7 @@ void iKeyboard(unsigned char key)
 		else
 		{
 			musicOn = true;
-			PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+			PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 		}
 	}
 	if (gameOver || gameWin)
@@ -905,32 +905,32 @@ void DrawLevelPage()
 
 void DrawCharPage()
 {
-	iShowBMP(0, 0, "characters\\character1.bmp");
+	iShowBMP(0, 0, "character1.bmp");
 	if (hunbunChoose && !nutral)
 	{
-		iShowBMP(0, 0, "characters\\character3.bmp");
+		iShowBMP(0, 0, "character3.bmp");
 	}
 	else if (mingChoose && !nutral)
 	{
-		iShowBMP(0, 0, "characters\\character2.bmp");
+		iShowBMP(0, 0, "character2.bmp");
 	}
 	else if (daniChoose && !nutral)
 	{
-		iShowBMP(0, 0, "characters\\character4.bmp");
+		iShowBMP(0, 0, "character4.bmp");
 	}
 	else if (koyangChoose && !nutral)
 	{
-		iShowBMP(0, 0, "characters\\character5.bmp");
+		iShowBMP(0, 0, "character5.bmp");
 	}
 	else if (heinChoose && !nutral)
 	{
-		iShowBMP(0, 0, "characters\\character6.bmp");
+		iShowBMP(0, 0, "character6.bmp");
 	}
 	else if (nutral)
 	{
-		iShowBMP(0, 0, "characters\\character1.bmp");
+		iShowBMP(0, 0, "character1.bmp");
 	}
-	iShowBMP2(50, 660, "back\\back.bmp", 0);
+	iShowBMP2(50, 660, "back.bmp", 0);
 }
 
 struct highscore
@@ -960,13 +960,13 @@ void DrawScorePage()
 		y -= 50;
 	}
 	fclose(fp);
-	iShowBMP2(60,600,"back\\back4.bmp", 0);
+	iShowBMP2(60, 600, "back4.bmp", 0);
 }
 
 void DrawRulesPage()
 {
-	iShowBMP(0,0,"rule.bmp");
-	iShowBMP2(60,600,"back\\back4.bmp", 0);
+	iShowBMP(0, 0, "rulep.bmp");
+	iShowBMP2(60, 600, "back4.bmp", 0);
 }
 
 void DrawLevel1()
@@ -997,7 +997,7 @@ void DrawLevel2()
 {
 	// iShowBMP(0, 0, "BG//level2.bmp");
 	BackgroundRendering();
-	iShowBMP2(50, 690, "back\\quitbutton2.bmp", 0);
+	iShowBMP2(50, 690, "quitbutton2.bmp", 0);
 	/*iSetColor(186, 184, 108);
 	iFilledRectangle(56, 648, HealthBar, 34);
 
@@ -1019,7 +1019,7 @@ void DrawLevel3()
 {
 
 	BackgroundRendering();
-	iShowBMP2(50, 690, "back\\quitbutton3.bmp", 0);
+	iShowBMP2(50, 690, "quitbutton3.bmp", 0);
 	/*iSetColor(254, 230, 29);
 	iFilledRectangle(56, 648, HealthBar, 34);
 
@@ -1041,7 +1041,7 @@ void DrawLevel3()
 void DrawLevel4()
 {
 	BackgroundRendering();
-	iShowBMP2(50, 690, "back\\quitbutton3.bmp", 0);
+	iShowBMP2(50, 690, "quitbutton3.bmp", 0);
 	DrawHealthBar();
 	chooseCharacter();
 	AddCoins();
@@ -1537,13 +1537,13 @@ void scoreShow()
 {
 	if (Level1 == 1 || Level2 == 1 || Level3 == 1 || Level4 == 1)
 	{
-		iSetColor(0,0,0);
+		iSetColor(0, 0, 0);
 		iText(59, 614, "SCORE:", GLUT_BITMAP_HELVETICA_18);
 		sprintf(SCORE, "%d", score);
 		sprintf(bunnysv, "%d", bunSave);
 		iText(126, 615, SCORE, GLUT_BITMAP_HELVETICA_18);
 		iShowBMP2(65, 540, "bun_1.bmp", 0);
-		iText(126,560, bunnysv, GLUT_BITMAP_HELVETICA_18);
+		iText(126, 560, bunnysv, GLUT_BITMAP_HELVETICA_18);
 		iRectangle(52, 600, 200, 40);
 		iRectangle(53, 601, 198, 38);
 		iRectangle(54, 602, 196, 36);
@@ -1633,7 +1633,7 @@ int main()
 	str[0] = 0;
 	if (musicOn)
 	{
-		PlaySound("Music\\NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
+		PlaySound("NewJeans.wav", NULL, SND_LOOP | SND_ASYNC);
 	}
 	iSetTimer(50, change);
 	iSetTimer(0, coinCollection);
